@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    {{>navbar}}
+    <br>
+    <center>
+        <h1 class="j">Welcome to MERN BackEnd Course</h1>
+        <h6>The best course on YouTube</h6>
+    </center>
+    <br><br>
+    <center>
+        <h3>Employee Registration Form</h3>
+    </center>
+    <br>
+    <center>
+        <form action="/register" method="POST">
+            <input type="text" placeholder="First name" name="firstname">
+            <input type="text" placeholder="Last name" name="lastname"><br>
+            <label for="">
+                <input type="radio" name="gender" value="Male">
+                <span>Male</span>
+            </label>
+            <label for="">
+                <input type="radio" name="gender" value="Female">
+                <span>Female</span>
+            </label>
+            <br>
+            <input type="number" placeholder="Phone" name="phone"><br>
+            <input type="email" placeholder="Email" name="email"><br>
+            <input type="text" placeholder="Password" name="password"><br>
+            <input type="text" placeholder="Confirm Password" name="confirmpassword"><br><br>  
+            <button type="submit">Register</button>
+        </form>
+    </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+      const login = document.getElementById('login');
+      const logout = document.getElementById('logout');
+      const authtoken = document.cookie;
+
+       if(authtoken){
+        login.style.display = "none"
+        registeration.style.display = "none";
+        logout.style.display = "block"
+      }else{
+        login.style.display = "block" 
+        registeration.style.display = "block";
+        logout.style.display = "none"
+      } 
+</script> 
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+
+<style>
+    .detailss{
+        margin-top: -470px;
+    }
+    .backkk{
+        height: 100vh;
+        background-image: url('/bookings.jpg');
+        background-size: cover;
+    }
+</style>
+
+<body>
+    {{>navbar}}
+    <br>
+    
+    <div class="backkk">
+        <ul class="detailss" style="text-align: center;">
+        {{#each jsonData}}
+        <p style="font-size: 20px;"><span style="font-weight: 700;">Booking ID:</span> {{this._id}}
+        <p style="font-size: 20px;"> <span style="font-weight: 700;">Date:</span> {{this.date}} </p>
+        <p style="font-size: 20px;"><span style="font-weight: 700;">Name:</span> {{this.name}} </p>
+        <p style="font-size: 20px;"><span style="font-weight: 700;">Time Slot:</span> {{this.slot}}</p>
+        <p style="font-size: 20px;"><span style="font-weight: 700;">No of Seats:</span> {{this.seats}}</p>
+
+        </p>
+        {{/each}}
+    </ul>
+
+    <h2 style="text-align: center; margin-top: 100px">Thank You! Do visit us again!!!</h2>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</body>
+
+<script>
+    const login = document.getElementById('login');
+    const logout = document.getElementById('logout');
+    const registeration = document.getElementById('registeration');
+
+    const authtoken = document.cookie;
+
+    if (authtoken) {
+        login.style.display = "none"
+        registeration.style.display = "none";
+        logout.style.display = "block"
+    } else {
+        login.style.display = "block"
+        registeration.style.display = "block";
+        logout.style.display = "none"
+    } 
+</script>
+
+
+</html>
